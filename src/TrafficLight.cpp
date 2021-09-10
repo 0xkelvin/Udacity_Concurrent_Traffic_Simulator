@@ -84,7 +84,7 @@ void TrafficLight::cycleThroughPhases()
 
     while (true) {
         // sleep for 100 miliseconds is enough since we wait for 4-6s
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); //Sleep only for one millisecond instead of 100 millisecond, sleep effect on latency
         elapsed = std::chrono::high_resolution_clock::now() - start;
 
         if (elapsed.count() > cycleTime) {
